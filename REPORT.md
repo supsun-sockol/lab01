@@ -12,33 +12,33 @@
 10) вывел все файлы с их размером (это было в другом терминале, поэтому поверьте на слово)
 11) вот список из 10  самых тяжелых файлов (343) 
 
-4 ./boost_out/include/boost/accumulators/accumulators.hpp
-4 ./boost_out/include/boost/accumulators/framework/accumulator_base.hpp
-4 ./boost_out/include/boost/accumulators/framework/accumulator_concept.hpp
-4 ./boost_out/include/boost/accumulators/framework/accumulators/external_accumulator.hpp
-4 ./boost_out/include/boost/accumulators/framework/accumulators/reference_accumulator.hpp
-4 ./boost_out/include/boost/accumulators/framework/accumulators/value_accumulator.hpp
-4 ./boost_out/include/boost/accumulators/framework/external.hpp
-4 ./boost_out/include/boost/accumulators/framework/features.hpp
-4 ./boost_out/include/boost/accumulators/framework/parameters/accumulator.hpp
-4 ./boost_out/include/boost/accumulators/framework/parameters/sample.hpp
+1. ./boost_out/include/boost/accumulators/accumulators.hpp
+1. ./boost_out/include/boost/accumulators/framework/accumulator_base.hpp
+1. ./boost_out/include/boost/accumulators/framework/accumulator_concept.hpp
+1. ./boost_out/include/boost/accumulators/framework/accumulators/external_accumulator.hpp
+1. ./boost_out/include/boost/accumulators/framework/accumulators/reference_accumulator.hpp
+1. ./boost_out/include/boost/accumulators/framework/accumulators/value_accumulator.hpp
+1. ./boost_out/include/boost/accumulators/framework/external.hpp
+1. ./boost_out/include/boost/accumulators/framework/features.hpp
+1. ./boost_out/include/boost/accumulators/framework/parameters/accumulator.hpp
+1. ./boost_out/include/boost/accumulators/framework/parameters/sample.hpp
 
-  326 wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
-  327  ls
-  328  tar -xvf boost_1_69_0.tar.gz 
-  329  cd boost_1_69_0/
-  330  find ./ -maxdepth 1
-  331  find ./ -maxdepth 1 |wc
-  332  find ./ |wc
-  333  find ./ -name "*.h" |wc
-  334  find ./ -name "*.cpp" |wc
-  335  find ./ -not -name "*.h" -not -name "*.cpp" |wc
-  336  find ./ -name "any.hpp"
-  337  grep -r "boost::asio" ./
-  338  ./bootstrap.sh --prefix=boost_output
-  339  ./b2 install
-  340  ls
-  341  mc
-  342  cd ../boost_libs/
-  343  find . -type f -exec ls -s {} \; | sort -n | head -10
-  344  history
+326) wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
+327)  ls
+328)  tar -xvf boost_1_69_0.tar.gz \n
+329)  cd boost_1_69_0/
+330)  find ./ -maxdepth 1
+331)  find ./ -maxdepth 1 |wc
+332)  find ./ |wc
+333)  find ./ -name "*.h" |wc
+334)  find ./ -name "*.cpp" |wc
+335)  find ./ -not -name "*.h" -not -name "*.cpp" |wc
+336)  find ./ -name "any.hpp"
+337)  grep -r "boost::asio" ./
+338)  ./bootstrap.sh --prefix=boost_output
+339)  ./b2 install
+340)  ls
+341)  mc
+342)  cd ../boost_libs/
+343)  find . -type f -exec ls -s {} \; | sort -n | head -10
+344)  history
