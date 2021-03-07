@@ -1,3 +1,4 @@
+# Лаба 01
 В конце файла приведена история терминала, в которой показаны все, введенные мной команды.
 1) Скачал файл (шаг 326)
 2) Разархиваровал (шаг 327)
@@ -12,16 +13,16 @@
 10) вывел все файлы с их размером (это было в другом терминале, поэтому поверьте на слово)
 11) вот список из 10  самых тяжелых файлов (343) 
 
-1. ./boost_out/include/boost/accumulators/accumulators.hpp
-1. ./boost_out/include/boost/accumulators/framework/accumulator_base.hpp
-1. ./boost_out/include/boost/accumulators/framework/accumulator_concept.hpp
-1. ./boost_out/include/boost/accumulators/framework/accumulators/external_accumulator.hpp
-1. ./boost_out/include/boost/accumulators/framework/accumulators/reference_accumulator.hpp
-1. ./boost_out/include/boost/accumulators/framework/accumulators/value_accumulator.hpp
-1. ./boost_out/include/boost/accumulators/framework/external.hpp
-1. ./boost_out/include/boost/accumulators/framework/features.hpp
-1. ./boost_out/include/boost/accumulators/framework/parameters/accumulator.hpp
-1. ./boost_out/include/boost/accumulators/framework/parameters/sample.hpp
+- ./boost_out/include/boost/accumulators/accumulators.hpp
+- ./boost_out/include/boost/accumulators/framework/accumulator_base.hpp
+- ./boost_out/include/boost/accumulators/framework/accumulator_concept.hpp
+- ./boost_out/include/boost/accumulators/framework/accumulators/external_accumulator.hpp
+- ./boost_out/include/boost/accumulators/framework/accumulators/reference_accumulator.hpp
+- ./boost_out/include/boost/accumulators/framework/accumulators/value_accumulator.hpp
+- ./boost_out/include/boost/accumulators/framework/external.hpp
+- ./boost_out/include/boost/accumulators/framework/features.hpp
+- ./boost_out/include/boost/accumulators/framework/parameters/accumula.hpp
+- ./boost_out/include/boost/accumulators/framework/parameters/sample.hpp
 
 326) wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
 327)  ls
