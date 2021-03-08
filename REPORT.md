@@ -1,45 +1,71 @@
-# Лаба 01
-В конце файла приведена история терминала, в которой показаны все, введенные мной команды.
-1) Скачал файл (шаг 326)
-2) Разархиваровал (шаг 327)
-3) Подсчитал, получил 18 файлов (шаг 328)
-    для подсчета использовал функцию find, которая ищет файлы в данный директории, удвалетворяющие данным требованиям. Результат работы find я передвал функции "туалет", которая считала кол-во строчек, слов, символов. Нам нужно только число файлов - первое выведенные число. Иногда find выводила пустую директорию в начале, ее считать не нужно.
-4) 66828 файлов всего ( шаг 332)
-5) 296 заголовочных файлов (шаг 333), 13774 спипишных файлов (334), 52758 остальных. (335)
-6) /home/Supsun/boost_1_69_0/boost/any.hpp (336)
-7) вывел, приводить их здесь не буду, их слишком много (337)
-8) скомпилировал (338, 339)
-9) забыл команду, поэтому открыл консольный файловый менеджер и сделал все в нем (341)
-10) вывел все файлы с их размером (это было в другом терминале, поэтому поверьте на слово)
-11) вот список из 10  самых тяжелых файлов (343) 
+    Скачайте библиотеку boost с помощью утилиты wget. Адрес для скачивания https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz.
+1) Ввод:wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boo      st_1_69_0.tar.gz
+2) Вывод: куча технической инфы
+    Разархивируйте скаченный файл в директорию ~/boost_1_69_0
+1) Ввод: tar -xf boost_1_69_0.tar.gz
+2) Вывод: отсутствует
+    Подсчитайте количество файлов в директории ~/boost_1_69_0 не включая вложенные директории.
+1) Ввод: find ./ -maxdepth 1 | wc
+2) Вывод 19 19 209
+> -maxdepth задает максивальную глубину поиска
 
-- ./boost_out/include/boost/accumulators/accumulators.hpp
-- ./boost_out/include/boost/accumulators/framework/accumulator_base.hpp
-- ./boost_out/include/boost/accumulators/framework/accumulator_concept.hpp
-- ./boost_out/include/boost/accumulators/framework/accumulators/external_accumulator.hpp
-- ./boost_out/include/boost/accumulators/framework/accumulators/reference_accumulator.hpp
-- ./boost_out/include/boost/accumulators/framework/accumulators/value_accumulator.hpp
-- ./boost_out/include/boost/accumulators/framework/external.hpp
-- ./boost_out/include/boost/accumulators/framework/features.hpp
-- ./boost_out/include/boost/accumulators/framework/parameters/accumula.hpp
-- ./boost_out/include/boost/accumulators/framework/parameters/sample.hpp
+> 19 это включая саму директорию, поэтому ответ 18
 
-326) wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
-327)  ls
-328)  tar -xvf boost_1_69_0.tar.gz \n
-329)  cd boost_1_69_0/
-330)  find ./ -maxdepth 1
-331)  find ./ -maxdepth 1 |wc
-332)  find ./ |wc
-333)  find ./ -name "*.h" |wc
-334)  find ./ -name "*.cpp" |wc
-335)  find ./ -not -name "*.h" -not -name "*.cpp" |wc
-336)  find ./ -name "any.hpp"
-337)  grep -r "boost::asio" ./
-338)  ./bootstrap.sh --prefix=boost_output
-339)  ./b2 install
-340)  ls
-341)  mc
-342)  cd ../boost_libs/
-343)  find . -type f -exec ls -s {} \; | sort -n | head -10
-344)  history
+> wc выводит кол-во строк, слов, букв
+    Подсчитайте количество файлов в директории ~/boost_1_69_0 включая вложенные директории.
+1) Ввод: find ./ | wc
+2) Вывод: 66829   66832 3286648
+> ответ 66828
+    Подсчитайте количество заголовочных файлов, файлов с расширением .cpp, сколько остальных файлов (не заголовочных и не .cpp).
+1) Ввод: find ./ -name "*.h" |wc
+2) Вывод:296     296   11738
+1) Ввод: find ./ -name "*.cpp" |wc
+2) Вывод: 13774   13774  647953
+1) Ввод: find ./ -not -name "*.h" -not -name "*.cpp" |wc
+2) Вывод: 52759   52762 2626957
+    Найдите полный пусть до файла any.hpp внутри библиотеки boost.
+1) Ввод: find ./ -name "any.hpp"
+2) Вывод:
+* ./include/boost/any.hpp
+* ./include/boost/spirit/home/support/algorithm/any.hpp
+* ./include/boost/xpressive/detail/utility/any.hpp
+* ./include/boost/hana/any.hpp
+* ./include/boost/hana/fwd/any.hpp
+* ./include/boost/proto/detail/any.hpp
+* ./include/boost/fusion/include/any.hpp
+* ./include/boost/fusion/algorithm/query/any.hpp
+* ./include/boost/fusion/algorithm/query/detail/any.hpp
+* ./include/boost/type_erasure/any.hpp
+> Ответ: ~/boost_1_69_0/include/boost/any.hpp
+    Выведите в консоль все файлы, где упоминается последовательность boost::asio.
+1) Ввод: grep -r "boost::asio" ./
+2) Вывод: очень много вского
+> grep позволяет осуществить поиск внутри файла
+    Скомпилирутйе boost. Можно воспользоваться инструкцией или ссылкой.
+1) Ввод: 
+* ./bootstrap.sh --prefix=boost_output
+* ./b2 install
+2) Вывод: неперевариваемое колличество бесполезной для меня информации
+    Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ~/boost-libs.
+1) Ввод:
+* mkdir ~/boost-libs
+* mv boost_output/ ~/boost-libs/
+2) Вывод: ничего
+    Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
+1)Ввод: ls -Rgh
+2)Вывод: на консоли появляется 67 тысяч строк со всеми файлами в нашей папке, приводить их здесь я не буду
+
+    Найдите топ10 самых "тяжёлых".
+1) Ввод: find . -type f -exec ls -s {} \; | sort -n | head -10
+> find ищет все файлы, ls -s выводит информацию о них sort -n сортирует по размеру, head -10 выводит топ 10
+2) Вывод:
+* ./boost_out/include/boost/accumulators/accumulators.hpp
+* ./boost_out/include/boost/accumulators/framework/accumulator_base.hpp
+* ./boost_out/include/boost/accumulators/framework/accumulator_concept.hpp
+* ./boost_out/include/boost/accumulators/framework/accumulators/external_accumulator.hpp
+* ./boost_out/include/boost/accumulators/framework/accumulators/reference_accumulator.hpp
+* ./boost_out/include/boost/accumulators/framework/accumulators/value_accumulator.hpp
+* ./boost_out/include/boost/accumulators/framework/external.hpp
+* ./boost_out/include/boost/accumulators/framework/features.hpp
+* ./boost_out/include/boost/accumulators/framework/parameters/accumulator.hpp
+* ./boost_out/include/boost/accumulators/framework/parameters/sample.hpp
